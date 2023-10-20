@@ -1,0 +1,33 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  node:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3
+
+      - uses: actions/checkout@v4
+
+      - run: |
+          [[ "$(node main.mjs)" == "ok" ]] && echo ok
+
+  deno:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: denoland/setup-deno@v1
+
+      - uses: actions/checkout@v4
+
+      - run: |
+          [[ "$(deno run main.mjs)" == "ok" ]] && echo ok
+
+  bun:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: oven-sh/setup-bun@v1
+
+      - uses: actions/checkout@v4
+
+      - run: |
+          [[ "$(bun run main.mjs)" == "ok" ]] && echo ok
