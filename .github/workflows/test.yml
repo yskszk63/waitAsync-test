@@ -46,7 +46,6 @@ jobs:
       - uses: oven-sh/setup-bun@v1
         with:
           bun-version: ${{ matrix.version }}
-          cache-hit: false
 
       - uses: actions/checkout@v4
 
