@@ -25,7 +25,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        version: [1.4, 1.37, latest]
+        version: [1.4, 1.37, v1.x]
     steps:
       - uses: denoland/setup-deno@v1
         with:
